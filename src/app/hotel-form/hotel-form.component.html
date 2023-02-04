@@ -22,17 +22,16 @@
         </P>  
           <p>
             <mat-form-field appearance="outline">
-              <mat-select id="category">
-                <mat-option *ngFor="let category of categories" [value]="category" formControlName="category">
+              <mat-select id="category" formControlName="category">
+                <mat-option *ngFor="let category of categories" [value]="category" >
                     {{category}}
                   </mat-option>
               </mat-select>
             </mat-form-field>
           </p>  
-          <p>
-            <button mat-flat-button color="primary" type="submit">Save</button>
-          </p>
-          <p *ngIf="error" class="error">
+          <button mat-flat-button [disabled]="!form.valid" color="primary" type="submit">Save</button>
+
+          <p *ngIf="!form.valid" class="error">
             {{ error }}
           </p>
       </form>      

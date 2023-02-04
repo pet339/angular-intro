@@ -8,33 +8,29 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class HotelFormComponent {
 
-  
   form: FormGroup = new FormGroup({
-    name: new FormControl('', [
+    name: new FormControl(null, [
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(30),
       Validators.pattern("[A-Z][a-zA-Z ]*")
     ]),
-    city: new FormControl('', [
+    city: new FormControl(null, [
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(30),
       Validators.pattern("[A-Z ][a-zA-Z ]*")
     ]),
-    category: new FormControl('', Validators.required)
+    category: new FormControl(null, Validators.required),
   });
 
   categories: string[] = [
     "Hotel", "Apartman", "GuestHouse"
   ]
-  @Input() error: string | null | undefined;
+  error = "Fill all field to save!"
   saveHotel(){
     if(this.form.valid){
       //submit
-    }
-    else{
-      this.error = "Fill all field to save!"
     }
   }
   
