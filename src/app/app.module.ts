@@ -9,20 +9,32 @@ import {MatCardModule} from '@angular/material/card';
 import { HotelComponent } from './hotel/hotel.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HotelFormComponent } from './hotel-form/hotel-form.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HotelComponent,
     RestaurantComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HotelFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
