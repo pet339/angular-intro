@@ -14,13 +14,13 @@ export class HotelFormComponent {
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(30),
-      Validators.pattern("[A-Z ]*")
+      Validators.pattern("[A-Z][a-zA-Z ]*")
     ]),
     city: new FormControl('', [
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(30),
-      Validators.pattern("[a-zA-Z ]")
+      Validators.pattern("[A-Z ][a-zA-Z ]*")
     ]),
     category: new FormControl('', Validators.required)
   });
