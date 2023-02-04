@@ -30,7 +30,7 @@ export class HotelFormComponent {
   error = "Fill all field to save!"
   saveHotel(){
     if(this.form.valid){
-      //submit
+      return this.form.value
     }
   }
   
