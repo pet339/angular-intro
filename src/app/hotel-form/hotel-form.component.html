@@ -1,0 +1,39 @@
+<mat-card class="form-card">
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="saveHotel()">
+        <P>
+            <mat-label>Name:</mat-label>
+        </P>
+        <p>
+            <mat-form-field appearance="outline">
+              <input id="name" type="text" matInput formControlName="name">
+            </mat-form-field>
+          </p>
+          <P>
+            <mat-label>City:</mat-label>
+        </P>
+          <p>
+            <mat-form-field appearance="outline">
+              <input id="city" type="text" matInput formControlName="city">
+            </mat-form-field>
+          </p>
+          <P>
+            <mat-label>Category:</mat-label>
+        </P>  
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-select id="category" formControlName="category">
+                <mat-option *ngFor="let category of categories" [value]="category" >
+                    {{category}}
+                  </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p>  
+          <button mat-flat-button [disabled]="!form.valid" color="primary" type="submit">Save</button>
+
+          <p *ngIf="!form.valid" class="error">
+            {{ error }}
+          </p>
+      </form>      
+    </mat-card-content>
+  </mat-card>
