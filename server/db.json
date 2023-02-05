@@ -29,12 +29,6 @@
       "name": "Four Seasons",
       "city": "Praha",
       "category": "Hotel"
-    },
-    {
-      "name": "John Smith",
-      "city": "Buenos Aires",
-      "category": "Hotel",
-      "id": 6
     }
   ],
   "meals": [
