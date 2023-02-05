@@ -15,6 +15,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HotelTableComponent } from './hotel-table/hotel-table.component';
+import{MatTableModule} from '@angular/material/table'
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HotelComponent,
     RestaurantComponent,
     NotFoundComponent,
-    HotelFormComponent
+    HotelFormComponent,
+    HotelTableComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     MatButtonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
