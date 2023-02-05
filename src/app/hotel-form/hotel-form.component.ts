@@ -1,13 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HotelService } from '../service/hotel.service';
 
+export interface Hotel {
+  name: string;
+  city: string;
+  category: string;
+}
 @Component({
   selector: 'app-hotel-form',
   templateUrl: './hotel-form.component.html',
   styleUrls: ['./hotel-form.component.scss']
 })
 export class HotelFormComponent {
-
+  constructor(private hotelService: HotelService){}
   form: FormGroup = new FormGroup({
     name: new FormControl(null, [
       Validators.required,
@@ -30,7 +36,7 @@ export class HotelFormComponent {
   error = "Fill all field to save!"
   saveHotel(){
     if(this.form.valid){
-      return this.form.value
+      this.hotelService.saveHotel(this.form.value).subscribe()
     }
   }
   
