@@ -11,13 +11,7 @@ import { Meal } from '../restaurant/restaurant.component';
 export class RestaurantOrderComponent {
   headers: string[] = ["Product", "Price"]
   @Input() data$: Observable<Meal[]> = new Subject<Meal[]>().asObservable()
-  price: number = 0
-  constructor(){ 
-    this.data$.subscribe( meal =>
-    meal.map( meal => {
-      this.price += meal.price
-    })
-  ) 
-  }
+  @Input() price$: Observable<number> = new Subject<number>().asObservable()
+  constructor(){ }
 
 }

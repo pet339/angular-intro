@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Observable, Subject, tap } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable, Subject, tap } from 'rxjs';
 import { RestaurantService } from '../service/restaurant.service';
 
 export interface Meal {
@@ -14,19 +14,27 @@ export interface Meal {
   styleUrls: ['./restaurant.component.scss'],
   providers: [RestaurantService]
 })
-export class RestaurantComponent {
+export class RestaurantComponent implements OnInit {
   menu: Meal[] = []
   //menu$: Observable<Meal[]> = new Subject<Meal[]>().asObservable()
   private orderList: Meal[] = []
-  orders$ = new Subject<any>();
-  constructor(private restaurantService: RestaurantService){
-    restaurantService.getMenu().subscribe(data => 
+  private total: number = 0
+  orders$ = new Subject<any>()
+  price$ = new BehaviorSubject(0); 
+  constructor(private restaurantService: RestaurantService){}
+  
+  ngOnInit(): void {
+    this.price$.next(this.total)
+
+    this.restaurantService.getMenu().subscribe(data => 
       this.menu = data
     )
   }
   
   postOrder(order: Meal){
     this.orderList.push(order)
+    this.total += order.price
+    this.price$.next(this.total)
     this.orders$.next(this.orderList)
   }
 
