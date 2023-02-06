@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { HotelService } from '../service/hotel.service';
 
 export interface Hotel {
@@ -10,16 +11,13 @@ export interface Hotel {
 @Component({
   selector: 'app-hotel-table',
   templateUrl: './hotel-table.component.html',
-  styleUrls: ['./hotel-table.component.scss']
+  styleUrls: ['./hotel-table.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HotelTableComponent {
   displayedColumns: string[] = ['name', 'city', 'category'];
-  dataSource:Hotel[] = [];
+  @Input() data$: Observable<Hotel[]> = new Subject<Hotel[]>().asObservable()
 
-  constructor(private hotelService: HotelService){
-    hotelService.getHotelList().subscribe(hotelList =>
-      this.dataSource = hotelList
-    )
-  }
+  constructor(private hotelService: HotelService){ }
   
 }

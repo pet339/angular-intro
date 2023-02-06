@@ -1,2 +1,2 @@
-<app-hotel-form ></app-hotel-form>
-<app-hotel-table></app-hotel-table>
+<app-hotel-form  (EM)="saveHotel($event)"></app-hotel-form>
+<app-hotel-table [data$]="this.hotels$"></app-hotel-table>

@@ -16,7 +16,6 @@ export interface Meal {
 })
 export class RestaurantComponent implements OnInit {
   menu: Meal[] = []
-  //menu$: Observable<Meal[]> = new Subject<Meal[]>().asObservable()
   private orderList: Meal[] = []
   private total: number = 0
   orders$ = new Subject<any>()
