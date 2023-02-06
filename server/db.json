@@ -31,16 +31,10 @@
       "category": "Hotel"
     },
     {
-      "name": "Hotel",
+      "name": "Hotel Test",
       "city": "Budapest",
       "category": "Hotel",
       "id": 6
-    },
-    {
-      "name": "Hotel Test",
-      "city": "Budapest",
-      "category": "GuestHouse",
-      "id": 7
     }
   ],
   "meals": [
