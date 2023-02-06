@@ -24,8 +24,6 @@ export class RestaurantComponent implements OnInit {
   constructor(private restaurantService: RestaurantService){}
   
   ngOnInit(): void {
-    this.price$.next(this.total)
-
     this.restaurantService.getMenu().subscribe(data => 
       this.menu = data
     )
