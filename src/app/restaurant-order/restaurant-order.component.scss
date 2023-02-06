@@ -1,0 +1,49 @@
+.container, .container2, .container3{
+    background-color: white;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    opacity: 85%;
+}
+.container2{
+    margin-top: 66px;
+    opacity: 100%;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.container3{
+    margin-top: 16px;
+    opacity: 100%;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+p{
+    margin: auto;
+    align-items: center;
+    
+}
+
+
+th {
+    
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    background: orange;
+    min-width: 198px;
+
+}
+td {
+    min-width: 198px;
+    padding: 5px;
+}
+tr {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+table{
+    margin-top: 5px;
+}

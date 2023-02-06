@@ -18,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HotelTableComponent } from './hotel-table/hotel-table.component';
 import{MatTableModule} from '@angular/material/table'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RestaurantOrderComponent } from './restaurant-order/restaurant-order.component';
+import { RestaurantMenuComponent } from './restaurant-menu/restaurant-menu.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     RestaurantComponent,
     NotFoundComponent,
     HotelFormComponent,
-    HotelTableComponent
+    HotelTableComponent,
+    RestaurantOrderComponent,
+    RestaurantMenuComponent
   ],
   imports: [
     BrowserModule,

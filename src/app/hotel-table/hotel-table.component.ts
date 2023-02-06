@@ -21,4 +21,5 @@ export class HotelTableComponent {
       this.dataSource = hotelList
     )
   }
+  
 }

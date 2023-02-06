@@ -1,0 +1,24 @@
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let header of headers">
+                    {{ header }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of data">
+                <td>
+                    <img src="{{row.imgUrl}}" (click)="order(row)"/>
+                </td>
+                <td>
+                    {{ row.productName }} 
+                </td>
+                <td>
+                    {{ row.price + " huf.-"}} 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
