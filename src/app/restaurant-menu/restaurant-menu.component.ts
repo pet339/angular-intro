@@ -13,7 +13,7 @@ export class RestaurantMenuComponent {
   @Input() data: Meal[] = []
   @Output() EM = new EventEmitter()
   constructor(){}
-  order(meal: Meal){
-    this.EM.emit(meal)
+  order(order: Meal){
+    this.EM.emit(order)
   }
 }

@@ -2,6 +2,6 @@
     <div class="container">
         <app-restaurant-menu [data]="this.menu" (EM)="postOrder($event)"></app-restaurant-menu>
         <p class="title">Taste of Italy</p>
-        <app-restaurant-order></app-restaurant-order>
+        <app-restaurant-order [data$]="this.orders$"></app-restaurant-order>
     </div>
 </body>

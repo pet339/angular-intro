@@ -1,3 +1,6 @@
+<div class="container2">
+    <p>Our Order:</p>
+</div>
 <div class="container">
     <table>
         <thead>
@@ -8,9 +11,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let row of data">
+            <tr *ngFor="let row of (data$ | async)">
                 <td>
-                    {{ row.productName }} 
+                    {{ "- " + row.productName }} 
                 </td>
                 <td>
                     {{ row.price + " huf.-"}} 
@@ -20,3 +23,6 @@
     </table>
 </div>
 <div class="container"></div>
+<div class="container3">
+    <p>{{"All price: "+ (price) +" huf.-"}}</p>
+</div>

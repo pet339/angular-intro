@@ -1,11 +1,13 @@
 import { Component, Input } from '@angular/core';
+import { Observable, Subject, tap } from 'rxjs';
 import { RestaurantService } from '../service/restaurant.service';
 
 export interface Meal {
   productName: string;
-  price: string;
+  price: number;
   imgUrl: string;
 }
+
 @Component({
   selector: 'app-restaurant',
   templateUrl: './restaurant.component.html',
@@ -14,7 +16,9 @@ export interface Meal {
 })
 export class RestaurantComponent {
   menu: Meal[] = []
-  orders: Meal[] = []
+  //menu$: Observable<Meal[]> = new Subject<Meal[]>().asObservable()
+  private orderList: Meal[] = []
+  orders$ = new Subject<any>();
   constructor(private restaurantService: RestaurantService){
     restaurantService.getMenu().subscribe(data => 
       this.menu = data
@@ -22,8 +26,8 @@ export class RestaurantComponent {
   }
   
   postOrder(order: Meal){
-    this.orders.push(order)
-    console.log(this.orders)
+    this.orderList.push(order)
+    this.orders$.next(this.orderList)
   }
 
 }

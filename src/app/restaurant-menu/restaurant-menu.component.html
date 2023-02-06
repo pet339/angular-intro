@@ -10,7 +10,7 @@
         <tbody>
             <tr *ngFor="let row of data">
                 <td>
-                    <img src="{{row.imgUrl}}" (click)="this.order(row)"/>
+                    <img src="{{row.imgUrl}}" (click)="order(row)"/>
                 </td>
                 <td>
                     {{ row.productName }} 
