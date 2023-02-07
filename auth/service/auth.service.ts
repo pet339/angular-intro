@@ -5,19 +5,27 @@ import { Subject } from 'rxjs';
 export interface User{
   email: string,
   username: string,
-  id: number,
-  token: string
+  id: number
+}
+export interface LoginResponse{
+  user: User,
+  accessToken: string
 }
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  private currentUser$ = new Subject<User>()
+  
+  currentUser = new Subject<User>()
   constructor(private httpClient: HttpClient) { }
 
   login(user: any){
-    this.httpClient.post<User>("http://localhost:3333/login", user)
-    .subscribe(user => this.currentUser$.next(user))
+    this.httpClient.post<LoginResponse>("http://localhost:3333/login", user)
+    .subscribe(res => {
+      this.currentUser.next(res.user)
+      localStorage.setItem('id_token', JSON.stringify(res.accessToken));
+    })
   }
+  
+  
 }
