@@ -1,7 +1,11 @@
 <body>
-    <div class="container">
+    <div class="first">
+        <p>Taste of Italy</p>
+    </div>
+    <div class="second">
         <app-restaurant-menu [data]="this.menu" (EM)="postOrder($event)"></app-restaurant-menu>
-        <p class="title">Taste of Italy</p>
+    </div>
+    <div class="third">
         <app-restaurant-order [data$]="this.orders$" [price$]="this.price$"></app-restaurant-order>
     </div>
 </body>

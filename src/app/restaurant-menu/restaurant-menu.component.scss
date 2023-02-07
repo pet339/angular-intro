@@ -3,9 +3,7 @@
     width: 600px;
     display: flex;
     justify-content: center;
-    margin-top: 56px;
     opacity: 85%;
-
 }
 th {
     
@@ -13,17 +11,16 @@ th {
     border-color: white;
     border-style: solid;
     background: orange;
-    min-width: 198px;
+    width: 198px;
 
 }
 td {
-    min-width: 198px;
+    width: 198px;
     padding: 5px;
 }
 tr {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-
 }
 img{
     width: 190px;
