@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Subject } from 'rxjs';
 
 export interface User{
@@ -15,17 +16,20 @@ export interface LoginResponse{
   providedIn: 'root'
 })
 export class AuthService {
-  
-  currentUser = new Subject<User>()
+  jwtHelper: JwtHelperService = new JwtHelperService();
+  private currentUser$ = new Subject<User>()
   constructor(private httpClient: HttpClient) { }
 
   login(user: any){
     this.httpClient.post<LoginResponse>("http://localhost:3333/login", user)
     .subscribe(res => {
-      this.currentUser.next(res.user)
-      localStorage.setItem('id_token', JSON.stringify(res.accessToken));
+      this.currentUser$.next(res.user)
+      localStorage.setItem('token', JSON.stringify(res.accessToken));
     })
   }
-  
+  isAuthenticated():boolean {
+    const token = localStorage.getItem("token")
+    return !this.jwtHelper.isTokenExpired(token);
+  }
   
 }
