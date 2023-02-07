@@ -16,10 +16,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HotelTableComponent } from './hotel-table/hotel-table.component';
-import{MatTableModule} from '@angular/material/table'
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RestaurantOrderComponent } from './restaurant-order/restaurant-order.component';
 import { RestaurantMenuComponent } from './restaurant-menu/restaurant-menu.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { AuthInterceptor } from 'auth/service/auth.interceptor';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { RestaurantMenuComponent } from './restaurant-menu/restaurant-menu.compo
     HotelFormComponent,
     HotelTableComponent,
     RestaurantOrderComponent,
-    RestaurantMenuComponent
+    RestaurantMenuComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,7 @@ import { RestaurantMenuComponent } from './restaurant-menu/restaurant-menu.compo
     MatTableModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
