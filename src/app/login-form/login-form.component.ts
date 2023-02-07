@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from 'auth/service/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -9,17 +9,15 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginFormComponent {
   form: FormGroup = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', Validators.required),
+    email: new FormControl('admin@gmail.com', [Validators.required, Validators.email]),
+    password: new FormControl('admin', Validators.required),
   });
-  constructor(private httpClient: HttpClient) {
-    
-  }
+  constructor(private authService: AuthService) { }
   submit() {
     if (this.form.valid) {
-      this.httpClient.post("http://localhost:3333/login", this.form.value).subscribe()
+      this.authService.login(this.form.value)
     }
   }
   error: string | null = "Email or password invalid"
-
+  
 }
