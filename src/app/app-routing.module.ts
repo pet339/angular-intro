@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HotelComponent } from './hotel/hotel.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 
 const routes: Routes = [
   { path: 'hotel', component: HotelComponent },
   { path: 'restaurant', component: RestaurantComponent },
+  { path: 'login', component: LoginFormComponent },
   { path: '', component: HotelComponent },
   { path: '**', component: NotFoundComponent }
 ];

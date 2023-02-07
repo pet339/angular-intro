@@ -20,6 +20,7 @@ import{MatTableModule} from '@angular/material/table'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RestaurantOrderComponent } from './restaurant-order/restaurant-order.component';
 import { RestaurantMenuComponent } from './restaurant-menu/restaurant-menu.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RestaurantMenuComponent } from './restaurant-menu/restaurant-menu.compo
     HotelFormComponent,
     HotelTableComponent,
     RestaurantOrderComponent,
-    RestaurantMenuComponent
+    RestaurantMenuComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
