@@ -1,5 +1,5 @@
 body {
-    background-image: url('../../../../background.jpg');
+    background-image: url('../../../app/assets/images/background.jpg');
     overflow-x: hidden;
 }
 
@@ -9,13 +9,7 @@ body {
     justify-content: center;
 }
 
-.second {
-    width: 50%;
-    display: inline-flex;
-    justify-content: center;
-}
-
-.third {
+.second, .third {
     width: 50%;
     display: inline-flex;
     justify-content: center;

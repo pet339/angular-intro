@@ -9,6 +9,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { MatTableModule } from "@angular/material/table";
 import { AuthInterceptor } from "src/app/core/interceptor/auth.interceptor";
+import { SharedModule } from "src/app/shared/shared.module";
 import { HotelFormComponent } from "./components/hotel-form/hotel-form.component";
 import { HotelTableComponent } from "./components/hotel-table/hotel-table.component";
 import { HotelRoutingModule } from "./hotel-routing.module";
@@ -26,11 +27,11 @@ import { HotelComponent } from "./hotel.component";
       MatFormFieldModule,
       MatInputModule,
       MatSelectModule,
-      MatButtonModule,
       ReactiveFormsModule,
       FormsModule,
       MatTableModule,
-      CommonModule
+      CommonModule,
+      SharedModule
     ],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
     bootstrap: [HotelComponent]

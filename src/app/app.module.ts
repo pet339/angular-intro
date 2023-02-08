@@ -15,13 +15,13 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
     AppComponent,
     NotFoundComponent,
     NavbarComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

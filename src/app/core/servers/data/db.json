@@ -35,6 +35,12 @@
       "city": "Budapest",
       "category": "Hotel",
       "id": 6
+    },
+    {
+      "name": "Hotel Test",
+      "city": "Budapest",
+      "category": "Hotel",
+      "id": 7
     }
   ],
   "meals": [

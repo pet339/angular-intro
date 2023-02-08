@@ -1,6 +1,4 @@
-@use '@angular/material' as mat;
-
-$my-palette: mat.define-palette(mat.$indigo-palette);
+@import "../../../../styles/colors.scss";
 
 :host{
   display: flex;
@@ -18,7 +16,7 @@ tr {
 }
 .mat-mdc-table .mdc-data-table__header-row {
   height: 56px;
-  background: mat.get-color-from-palette($my-palette, 500);
+  background: $primary-color;
 }
 th {
   color: white;

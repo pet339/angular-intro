@@ -29,7 +29,7 @@
               </mat-select>
             </mat-form-field>
           </p>  
-          <button mat-flat-button [disabled]="!form.valid" color="primary" type="submit">Save</button>
+          <app-shared-button text=Save color="primary" type="submit" [disabled]="!form.valid"></app-shared-button>
 
           <p *ngIf="!form.valid" class="error">
             {{ error }}

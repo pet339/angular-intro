@@ -1,43 +1,30 @@
-.first {
+.container {
     display: flex;
     background-color: white;
-    width: 600px;
+    justify-content: center;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    width: 600px;
+}
+.first {
     margin-top: 66px;
 }
 
 .second {
-    display: flex;
-    justify-content: center;
-    background-color: white;
     opacity: 85%;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    width: 600px;
 }
 
 .third {
-    display: flex;
-    background-color: white;
     margin-top: 16px;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    width: 600px;
-
 }
-
 
 p{
     margin: auto;
     align-items: center;
 }
 
-th {
-    
+th {   
     border-width: 2px;
     border-color: white;
     border-style: solid;
