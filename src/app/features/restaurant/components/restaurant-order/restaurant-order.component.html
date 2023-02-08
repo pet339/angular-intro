@@ -1,0 +1,27 @@
+<div class="container first">
+    <p>Our Order:</p>
+</div>
+<div class="container second">
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let header of headers">
+                    {{ header }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of (data$ | async)">
+                <td>
+                    {{ "- " + row.productName }} 
+                </td>
+                <td>
+                    {{ row.price + " huf.-"}} 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container third">
+    <p>{{"All price: "+ (price$ | async) +" huf.-"}}</p>
+</div>

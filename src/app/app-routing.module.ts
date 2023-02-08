@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardService } from 'auth/service/auth-guard.service';
-import { HotelComponent } from './hotel/hotel.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { RestaurantComponent } from './restaurant/restaurant.component';
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginFormComponent },
-  { path: 'hotel', component: HotelComponent, canActivate: [AuthGuardService] },
-  { path: 'restaurant', component: RestaurantComponent, canActivate: [AuthGuardService] },
-  { path: '', component: LoginFormComponent },
+  { path: 'login', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) },
+  { path: 'hotel', loadChildren: () => import('./features/hotel/hotel.module').then(m => m.HotelModule) },
+  { path: 'restaurant', loadChildren: () => import('./features/restaurant/restaurant.module').then(m => m.RestaurantModule) },
+  { path: '', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) },
   { path: '**', component: NotFoundComponent }
 ];
 

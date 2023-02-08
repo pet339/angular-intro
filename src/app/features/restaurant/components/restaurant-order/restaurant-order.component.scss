@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    width: 600px;
+}
+.first {
+    margin-top: 66px;
+}
+
+.second {
+    opacity: 85%;
+}
+
+.third {
+    margin-top: 16px;
+}
+
+p{
+    margin: auto;
+    align-items: center;
+}
+
+th {   
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    background: orange;
+    min-width: 198px;
+
+}
+td {
+    min-width: 198px;
+    padding: 5px;
+}
+tr {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+table{
+    margin-top: 5px;
+}

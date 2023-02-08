@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-title>Login Form</mat-card-title>
+<mat-card-content>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <p>
+    <mat-form-field appearance="outline">
+      <input type="email" matInput placeholder="email@gmail.com" formControlName="email">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="outline">
+      <input type="password" matInput placeholder="Password" formControlName="password">
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="!form.valid" class="error">
+    {{ error }}
+  </p>
+
+  <app-shared-button text=Login color="primary" type="submit" [disabled]="!form.valid"></app-shared-button>
+</form>
+</mat-card-content>
+</mat-card>

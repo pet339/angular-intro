@@ -1,0 +1,31 @@
+body {
+    background-image: url('../../../app/assets/images/background.jpg');
+    overflow-x: hidden;
+}
+
+.first {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.second, .third {
+    width: 50%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .first,
+    .second,
+    .third {
+        width: 70%;
+    }
+}
+p{
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    padding: 10px;
+}
